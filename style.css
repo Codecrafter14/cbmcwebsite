@@ -1,0 +1,253 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Luxurious+Roman&family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #3d3d3d;
+    animation: fadeEffect 2s;
+}
+
+p {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+a:link {
+    text-decoration: none;
+    text-decoration-color: black;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    text-decoration-color: gold;
+    color: gold;
+}
+
+
+#missingimg img {
+    width: 300px;
+    height: auto;
+    margin-left: 200px;
+}
+
+
+a:focus {
+    text-decoration: none;
+    text-decoration-color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    text-decoration-color: black;
+    outline: none;
+    color: black;
+}
+
+
+a:visited:hover {
+    text-decoration: none;
+    text-decoration-color: black;
+    outline: none;
+    color: gold;
+}
+
+
+#logo {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#news {
+    background-color: #494949;
+    margin-left: 500px;
+    
+}
+
+
+
+#logo_bild {
+    width: 240px;
+    height: 240px;
+    background-image: url(server-icon.jpg);
+    animation: fadeEffect 2s;
+    
+}
+
+#logo_text {
+    font-family: 'Luxurious Roman', cursive;
+    animation: fadeEffect 2s;
+}
+
+#nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    list-style-type: none;
+    margin: 0px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    padding: 0;
+    animation: fadeEffect 2s;
+    background-color: #2D2D2D;
+    box-sizing: border-box;
+    border-radius: 3px 15px 5px 30px;
+}
+
+#nav ul li {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+#nav ul li:hover {
+    cursor: pointer;
+    color: gold;
+    
+}
+
+
+#Profil_CodeCrafter {
+    margin-top: -1px;
+    margin-left: 20px;
+}
+
+
+#Profil_ProJakob {
+    margin-top: -156px;
+    margin-left: 320px;
+}
+
+
+#Profil_TrendyBinkie {
+    margin-top: -155px;
+    margin-left: 470px;
+}
+
+
+#Profil_SinClay {
+    margin-top: -155px;
+    margin-left: 620px;
+}
+
+
+#Profilbilder h3 {
+    font-family: cursive;
+    color: cyan;
+    margin-left: 10px;
+    margin-top: 0;
+    padding: 0;
+    font-size: 15px;
+}
+
+#Profilbilder img {
+    width: 100px;
+    height: auto;
+    border-radius: 100%;
+    display: block;
+}
+
+
+#Profilbilder p {
+    margin: 0;
+    padding: 0;
+}
+
+#Profil_BrickCreeper {
+    margin-top: -155px;
+    margin-left: 170px;
+}
+
+#Profil_BrickCreeper h3 {
+    color: red;
+}
+
+#Profil_CodeCrafter h3 {
+    color: red;
+}
+
+#Profil_ProJakob h3 {
+    color: yellow;
+}
+
+
+
+#Profil_zCreeper {
+    margin-top: -156px;
+    margin-left: 470px;
+}
+
+
+#nav ul li:focus {
+    color: black;
+}
+
+
+
+#Profilbilder {
+    background-color: #5e5f5e;
+    box-sizing: border-box;
+    border-radius: 3px 15px 5px 30px;
+    box-shadow:8px 8px 8px #666;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+#slider {
+    background-image: url(backgrounds/hub1.png);
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: top;
+}
+
+
+#mitte {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#mitte p {
+    color: white
+}
+
+
+#mitte h1,h2,h3,h4 {
+    color: gold;
+    font-weight: 300;
+}
+
+
+
+#social_ig img {
+    width: 50px;
+    height: auto;
+}
+
+
+fade-out {
+    animation: fadeEffectOut;
+}
+
+
+/*Fading */
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffectOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}

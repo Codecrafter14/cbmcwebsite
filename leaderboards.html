@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<title>CodeBlocksMC</title>
+	<meta name="description" content="Startseite CodeBlocksMC">
+	<link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    
+    <script>
+		// Will be executed after page is loaded
+		window.addEventListener("load", () => {
+			const stats = new WebStats({
+				// requried:
+				table: document.getElementById("webstats-table"), // The <table> element to use
+				ip: "193.135.10.132",    // The IP of the server
+				port: 15499,            // The port set in the config.yml on the server
+				// optional:
+				updateInterval: 10000, // Set to 0 to disable auto-updating (in ms, default 10000)
+				sortBy: "Player",      // The initial sorted objective (default "Player")
+				descending: false,     // The initial sorting direction (default false)
+				showSkins: true,       // Whether to show player heads (default true)
+				displayCount: 100,     // Max rows to show on one page (default 100, set to -1 to disable pagination)
+			})
+		})
+	</script>
+    
+    
+    
+    
+</head>
+
+<body>
+    
+    
+    
+
+    <div id="oben">
+        <div id="logo">
+            <div id="logo_bild"></div>
+            <div id="logo_text">
+                <h1>CodeBlocksMC</h1>
+            </div>
+        </div>
+        <div id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href ="connect.html">Verbinden</a></li>
+                <li><a href ="minigames.html">Minispiele</a></li>
+                <li>Kontakt</li>
+                <li><a href ="leaderboards.html">Leaderboards</a></li>
+            </ul>
+        </div>
+        <div id="slider"></div>
+    </div>
+    
+    <div id="mitte">
+        <div class="inhalt_box">
+            <h2>Statistiken</h2>
+            
+            <main>
+		      <span>
+                    <!-- toggle compact view (optional) -->
+                    <input type="checkbox" name="compact" id="compact" class="webstats-option">
+                    <label for="compact">Compact</label>
+                </span>
+                <span>
+                    <!-- toggle hiding offline players (optional) -->
+                    <input type="checkbox" name="hide-offline" id="hide-offline" class="webstats-option">
+                    <label for="hide-offline">Hide offline players</label>
+                </span>
+                <span class="webstats-pagination">
+                    <!-- pagination controls (optional) -->
+                    <button name="prev" class="webstats-pagination">Prev</button>
+                    <select name="page" class="webstats-pagination"></select>
+                    <button name="next" class="webstats-pagination">Next</button>
+                </span>
+
+		<!-- the table which will be populated by WebStats (required) -->
+		<table id="webstats-table"></table>
+	</main>
+            
+            
+        </div>
+    </div>
+    
+    <div id="unten">
+        <p>Social Media</p>
+        
+        <a id="social_ig" href="https://instagram.com/codeblocksmc" target="_blank">Instagram</a>
+    </div>
+    
+</body>
+</html>
