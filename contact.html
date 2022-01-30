@@ -30,23 +30,41 @@
     </div>
     
     <div id="mitte">
-        <h1>Kontaktiere uns</h1>
-        
-        <form>
-            <label>Vorname</label>
-            <input type="text">
-            <label>Nachname</label>
-            <input type="text">
-            <label></label>
-            <label>E-Mail-Adresse</label>
-            <input type="email">
+        <!-- Das Formular beginnt hier, die folgende Zeile NICHT ändern: -->
+        <form action="http://www.formular-chef.de/fc.cgi" method="post" enctype="multipart/form-data">
+ 
+        <!-- Wir definieren einen festen Betreff: -->
+        <input type="hidden" name="betreff" value="Jemand will Kontakt über die Website aufnehmen!">
+        <!-- Der URL zum Antwortseiten-Template: -->
+        <input type="hidden" name="template_antwort" value="http://">
+        <!-- Der URL zum Fehlerseiten-Template: -->
+        <input type="hidden" name="template_fehler" value="http://">
+ 
+        <!-- Hier beginnen die Formular-Felder, die dem Besucher angezeigt werden: -->   
+
+
+        <label for="Anrede">Anrede</label>:
+        <select id="Anrede" name="Anrede" size="1">
+            <option>Herr</option>
+            <option>Frau</option>
+        </select>
+
+        <label for="Nachname">Ihr Name:</label>
+        <input name="Nachname" id="Nachname">
+
+        <label for="empfaenger">E-Mail:</label>
+        <input name="empfaenger" id="empfaenger">
+
+        <label for="text">Nachricht</label>
+        <textarea name="text" id="text"></textarea>
+        <input type="submit" value="Senden">
         </form>
     </div>
     
     <div id="unten">
         <p>Social Media</p>
         
-        <a id="social_ig" href="https://instagram.com/codeblocksmc" target="_blank">Instagram</a>
+        <a id="social_ig" href="https://instagram.com/codeblocksmc" target="_blank"><img src="img/Instagram_logo_2016.svg.png"></a>
     </div>
     
 </body>
