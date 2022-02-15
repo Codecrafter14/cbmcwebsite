@@ -135,6 +135,13 @@ a:visited:hover {
 }
 
 
+
+#social_ig img {
+    width: 50px;
+    height: auto;
+}
+
+
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
