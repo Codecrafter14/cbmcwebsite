@@ -14,6 +14,13 @@ body {
     animation: fadeEffect 2s;
 }
 
+
+
+#social_ig img {
+    width: 50px;
+    height: auto;
+}
+
 p {
     font-family: 'Roboto Condensed', sans-serif;
 }
