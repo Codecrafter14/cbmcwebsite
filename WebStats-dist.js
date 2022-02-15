@@ -9,27 +9,8 @@
 
 class Data {
 	constructor(data){
-		this.scoreboard = data.scoreboard
-		this.players = data.online
-		this.columns = data.scoreboard.columns
-			?? Object.keys(data.scoreboard.scores).sort()
-		
-		// Reverse-map column names to indices
-		// (index 0 contains the original index, before sorting)
-		this.columns_ = {Player: 1}
-		this.columns.forEach((val, idx) => this.columns_[val] = idx + 2)
-		
-		this.filter()
-		
-		this.scores = []
-		for(const entryName of this.entries){
-			const entry = []
-			entry.push(this.scores.push(entry) - 1)
-			entry.push(entryName)
-			for(const columnName of this.columns){
-				entry.push(this.scoreboard.scores[columnName][entryName])
-			}
-		}
+		this.setOnlineStatus(data.online)
+		this.setScoreboard(data.scoreboard)
 	}
 	
 	get entries(){ return this.scoreboard.entries }
@@ -46,8 +27,25 @@ class Data {
 		this.scoreboard = scoreboard
 		this.columns = scoreboard.columns
 			?? Object.keys(scoreboard.scores).sort()
+		
+		this.filter()
+		
+		this.scores = []
+		for(const entryName of this.entries){
+			const entry = []
+			entry.push(this.scores.push(entry) - 1)
+			entry.push(entryName)
+			for(const columnName of this.columns){
+				entry.push(this.scoreboard.scores[columnName]?.[entryName] ?? 0)
+			}
+		}
+		
+		// Reverse-map column names to indices
+		// (index 0 contains the original index, before sorting)
+		this.columns_ = {Player: 1}
+		this.columns.forEach((val, idx) => this.columns_[val] = idx + 2)
 	}
-	setOnlineStatus = online => this.players = online
+	setOnlineStatus(online){ this.players = online }
 	setStats(data){
 		this.setScoreboard(data.scoreboard)
 		this.setOnlineStatus(data.online)
@@ -271,13 +269,15 @@ class Display {
 		this.currentPage = page
 		if(show != false) this.show()
 		
-		this.updatePagination()
+		if(this.displayCount > 0) this.updatePagination()
 	}
 	
 	changeHideOffline(hideOffline){
 		this.hideOffline = hideOffline
-		this.updatePagination()
-		this.changePage(1)
+		if(this.displayCount > 0){
+			this.updatePagination()
+			this.changePage(1)
+		}
 	}
 	
 	// Re-display table contents
@@ -308,7 +308,7 @@ class Display {
 		let objective = e.target.innerText
 		this.descending = (objective === this.sortBy) ? !this.descending : true
 		this.sortBy = objective
-		this.changePage(1, false)
+		if(this.displayCount > 0) this.changePage(1, false)
 		this.sort()
 		
 		// Set URL query string, for sharing
@@ -429,6 +429,8 @@ class WebStats {
 			})
 			this.display.hideOffline = optionHideOffline.checked
 		}
+		
+		window.webstats = this
 	}
 	
 	init(data){
