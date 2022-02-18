@@ -247,6 +247,10 @@ a:visited:hover {
     color: gold
 }
 
+#unten {
+    background-color: #2D2D2D
+}
+
 
 fade-out {
     animation: fadeEffectOut;
