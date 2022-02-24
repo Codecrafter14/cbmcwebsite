@@ -18,6 +18,10 @@ p {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+#news {
+    background-color: #585858,
+}
+
 
 a:link {
     text-decoration: none;
